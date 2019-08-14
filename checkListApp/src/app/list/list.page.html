@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      List
+    </ion-title>
+    <ion-item button (click)="addItemToList()" slot="end">
+      <ion-icon [name]="add"></ion-icon>
+    </ion-item>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list *ngIf="list">
+    <ion-item *ngFor="let item of list.items">
+      <!-- <ion-icon [name]="item.icon" slot="start"></ion-icon> -->
+      <ion-label>{{ item.title }}</ion-label>
+      <ion-checkbox
+        slot="end"
+        [(ngModel)]="item.checked"
+        (ionChange)="checkItem($event)"
+      ></ion-checkbox>
+    </ion-item>
+    <ion-item *ngFor="let item of list.items">
+      <ion-label class="checked-item">{{ item.title }}</ion-label>
+      <ion-checkbox
+        slot="end"
+        [(ngModel)]="item.checked"
+        (ionChange)="uncheckItem($event)"
+      ></ion-checkbox
+    ></ion-item>
+  </ion-list>
+  <ion-button *ngIf="!list" (click)="generateList()"
+    >Generate New List</ion-button
+  >
+  <!--
+    <div *ngIf="selectedItem" padding>
+      You navigated here from <b>{{selectedItem.title }}</b>
+    </div>
+  -->
+</ion-content>

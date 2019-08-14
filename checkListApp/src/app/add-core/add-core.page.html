@@ -1,0 +1,15 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Add a Core</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <form [formGroup]="addCoreForm" (ngSubmit)="addCoreFormSubmit()">
+    <ion-item>
+      <ion-label>Title</ion-label>
+      <ion-input formControlName="coreTitle"></ion-input>
+    </ion-item>
+    <ion-button expand="block" type="submit">Create</ion-button>
+  </form>
+</ion-content>
