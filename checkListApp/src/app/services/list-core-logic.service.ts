@@ -71,4 +71,16 @@ export class ListCoreLogicService {
 
     this.store.dispatch(new Actions.CreateList({ list: listToAdd }));
   }
+
+  checkItem(id: number, title: string, list: List) {
+    let itemToCheck = {
+      id: id,
+      title: title,
+      checked: false
+    };
+
+    this.store.dispatch(
+      new Actions.CheckItem({ list: list, item: itemToCheck })
+    );
+  }
 }

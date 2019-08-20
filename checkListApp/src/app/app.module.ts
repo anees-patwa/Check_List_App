@@ -10,7 +10,7 @@ import { AppComponent } from "./app.component";
 import { AppRoutingModule } from "./app-routing.module";
 import { StoreModule } from "@ngrx/store";
 import { reducers, metaReducers } from "./reducers";
-
+import { StoreDevtoolsModule } from "@ngrx/store-devtools";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { ListCoreLogicService } from "./services/list-core-logic.service";
 @NgModule({
